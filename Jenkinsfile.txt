@@ -5,11 +5,19 @@ pipeline {
         stage('Build') {
 		
 			when{
-				changeRequest title:"when-pr"
+				changelog "build"
 			}
 		
             steps {                
                 echo 'Hello World changing request'
+            }
+        }
+        stage("Deploy stage"){
+            when{
+                changelog "Deployed"
+            }
+               steps {                
+                echo 'deployed'
             }
         }
     }

@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
 		
 			when{
-				changelog "build"
+				changelog "build====to stage"
 			}
 		
             steps {                
@@ -18,7 +18,7 @@ pipeline {
                 changelog "Deployed"
             }
                steps {                
-                echo 'deployed'
+                echo 'deployed to staging'
             }
         }
     }
